@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Player</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #111;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
+        }
+
+        .video-container {
+            width: 90%;
+            max-width: 1200px;
+        }
+
+        video {
+            width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 0 30px rgba(0,0,0,0.5);
+            background: #000;
+        }
+    </style>
+</head>
+<body>
+
+<div class="video-container">
+    <video
+        id="myVideo"
+        controls
+        autoplay
+        muted
+        playsinline
+    >
+        <source src="demo.mp4" type="video/mp4">
+        Your browser does not support HTML5 video.
+    </video>
+</div>
+
+<script>
+    const video = document.getElementById('myVideo');
+
+    // Try autoplay
+    video.play().catch(() => {
+        console.log("Autoplay blocked by browser.");
+    });
+</script>
+
+</body>
+</html>
